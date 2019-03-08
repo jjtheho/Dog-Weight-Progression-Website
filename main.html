@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="fields">
+    <div class="input">
+        <form class="input-fields">
+            <input type="text" id="type" placeholder="Type">
+            <input type="text" id="age" placeholder="Age">
+            <input type="text" id="weight" placeholder="Weight"><br>
+            <button type="reset" id="btn">Add</button>
+        </form>
+    </div>
+    <ul id="list">
+    </ul>
+</div>
+
+<script>
+    var type = document.getElementById("type");
+    var age = document.getElementById("age");
+    var weight = document.getElementById("weight");
+    var btn = document.getElementById("btn");
+    var num = 1;
+
+    btn.addEventListener("click", addItem)
+
+    function addItem() {
+        var form = document.contact;
+        if ((type.value === "") || (type.age === "") || (type.weight === "")) {
+            alert("Fill in!");
+        }
+        else {
+            if (list.style.borderTop ==="") {
+                list.style.borderTop = "2px solid white";
+            }
+            var info = type.value + " " + age.value + " " + weight.value
+            var ul = document.getElementById("list");
+            var lis = document.createElement("li");
+            lis.setAttribute("id", num);
+            lis.appendChild(document.createTextNode(info));
+            ul.appendChild(lis);
+
+            document.getElementById(num).style.cssText = "background:white;" +
+                "font-family=san-serif;" +
+                "padding:10px; list-style-type: none;"
+
+            ++num;
+        }
+    }
+
+</script>
+
+
+</body>
+
+</html>
